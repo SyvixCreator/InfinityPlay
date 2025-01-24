@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>InfinityPlay - Unblocked Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -28,22 +29,29 @@
         <div class="container">
             <h2>Featured Games</h2>
             <div class="game-cards">
-                <!-- Example game cards -->
-                <div class="game-card">
-                    <h3>Game 1</h3>
-                    <iframe src="https://example.com" width="300" height="200"></iframe>
+                <div class="game-card" data-game-url="https://flappybird.io/">
+                    <h3>Flappy Bird</h3>
+                    <img src="https://example.com/flappy-bird-thumbnail.jpg" alt="Flappy Bird" width="300">
                 </div>
-                <div class="game-card">
-                    <h3>Game 2</h3>
-                    <iframe src="https://example.com" width="300" height="200"></iframe>
+                <div class="game-card" data-game-url="https://ponggame.org/">
+                    <h3>Pong</h3>
+                    <img src="https://example.com/pong-thumbnail.jpg" alt="Pong" width="300">
                 </div>
-                <div class="game-card">
-                    <h3>Game 3</h3>
-                    <iframe src="https://example.com" width="300" height="200"></iframe>
+                <div class="game-card" data-game-url="https://tetris.com/play-tetris">
+                    <h3>Tetris</h3>
+                    <img src="https://example.com/tetris-thumbnail.jpg" alt="Tetris" width="300">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- The Modal (Hidden by Default) -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="gameIframe" src="" width="100%" height="600" frameborder="0"></iframe>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 InfinityPlay. All rights reserved.</p>
