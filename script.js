@@ -1,6 +1,6 @@
-// Get the modal and iframe
+// Get the modal and game container
 var modal = document.getElementById("gameModal");
-var iframe = document.getElementById("gameIframe");
+var gameContainer = document.getElementById("gameContainer");
 
 // Get all the game cards
 var gameCards = document.querySelectorAll(".game-card");
@@ -8,11 +8,11 @@ var gameCards = document.querySelectorAll(".game-card");
 // Loop through each game card
 gameCards.forEach(function(card) {
     card.addEventListener("click", function() {
-        // Get the URL of the game
-        var gameUrl = card.getAttribute("data-game-url");
+        // Get the embed HTML from the data-game-embed attribute
+        var gameEmbed = card.getAttribute("data-game-embed");
 
-        // Set the iframe source to the game URL
-        iframe.src = gameUrl;
+        // Insert the embed code into the game container
+        gameContainer.innerHTML = gameEmbed;
 
         // Show the modal
         modal.style.display = "block";
@@ -23,13 +23,13 @@ gameCards.forEach(function(card) {
 var closeBtn = document.getElementsByClassName("close")[0];
 closeBtn.onclick = function() {
     modal.style.display = "none";
-    iframe.src = ""; // Stop the game when the modal is closed
+    gameContainer.innerHTML = ""; // Remove the game from the container when closed
 }
 
 // When the user clicks anywhere outside the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-        iframe.src = ""; // Stop the game when the modal is closed
+        gameContainer.innerHTML = ""; // Remove the game from the container when closed
     }
 }
